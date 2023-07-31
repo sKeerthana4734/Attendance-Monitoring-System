@@ -4,7 +4,13 @@ This project is used to detects the user's face using a web camera through a web
 The student's captured face image is saved with the current date and time in a separate directory for reference when required.
 * Training platform: Google colab
 * Data Annotation: LabelImg from python package
-  
+* Model: Faster RCNN
+* Data Source: Realtime student images
+* Front-end: HTML, CSS
+* Back-end: Python flask
+
+### Project Working: 
+Refer "AMS Project Demo.mp4" file
 
 ### UML Diagram:
 ![uml](https://github.com/sKeerthana4734/Attendance-Monitoring-System/assets/91558152/7eb82849-adba-4acd-a70c-362b18cead24)
