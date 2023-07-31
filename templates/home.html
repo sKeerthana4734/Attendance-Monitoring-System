@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attendance Monitoring System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-top: -4%;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .image {
+            text-align: center;
+        }
+
+        .image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 10px solid white;
+            box-shadow: 0px 0px 10px grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Attendance Monitoring System</h1>
+    </div>
+    <div class="content">
+        <h2>Welcome to our Attendance Monitoring System</h2>
+        <p>Click the button below to mark your attendance</p>
+        <a href="index.html" class="button">Mark attendance</a>
+    </div>
+    <div class="image">
+        <img src="data:image/png;base64,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"
+            alt="Attendance Monitoring System">
+    </div>
+</body>
+
+</html>

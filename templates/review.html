@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> AMS </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        a,
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #3e8e41;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        #recapture,
+        #detect {
+            background-color: #f44336;
+        }
+
+        #recapture:hover,
+        #detect:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#detectFace').click(function () {
+                $('#myData').text('Loading...');
+                $.ajax({
+                    url: '/detect',
+                    type: 'GET',
+                    success: function (response) {
+                        $('#myData').text(response);
+                        alert(response);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Attendance Monitoring System</h1>
+    </div>
+
+    <div class="container">
+        <img src="{{ image_url }}" alt="Image">
+
+        <div class="buttons">
+            <button id="detectFace">Detect</button>
+            <br>
+            <a href="index.html" id="recapture">Re-capture</a>
+            <a href="home.html" id="back">Go back</a>
+        </div>
+        <div id="myData"></div>
+        <p><b>Note: If no face detected, kindly click detect again or re-capture</b></p>
+    </div>
+</body>
+
+</html>
